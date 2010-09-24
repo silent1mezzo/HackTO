@@ -1,0 +1,6 @@
+Directory structure should be something like:
+   static
+    -- css
+    -- js
+    -- images
+   dynamic
