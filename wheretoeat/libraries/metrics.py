@@ -54,6 +54,7 @@ class Metric(object):
             total += f() * weight
 
         return total
+        
     def calculate_weather_metric(self):
         # sloppy but we're running out of time.
         try:
