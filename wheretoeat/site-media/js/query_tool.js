@@ -2,9 +2,24 @@ $(document).ready(function() {
     $('#id_search_button').click(function(e){
         e.preventDefault();
         
-        $.getJSON(SEARCH_JSON, function(data) {
-            $('#result').show();
-        });
+        var text = $('#id_q').val();
+        var postal_code = $('#id_postal_code').val();
+        
+        $.ajax({
+           type: "POST",
+           url: SEARCH_JSON,
+           dataType: "json",
+           data: {
+               'q' : text,
+               'postal_code' : postal_code
+           },
+           success: function(data, textStatus, XMLHttpRequest){
+             $('#result').show();
+           },
+           error: function(XMLHttpRequest, textStatus, errorThrown) {
+               alert('oh shit');
+           } 
+         });
     });
 });
 

@@ -28,16 +28,19 @@ def search(request):
 
 
 def search_json(request):
+    print request.POST
+    q = request.POST.get('q')
+    postal_code = request.POST.get('postal_code')
     
     
     data = {
-        'name' : '',
-        'address' : '',
-        'city' : '',
-        'province' : 'the province',
-        'latitude' : '',
-        'longitude' : '',
-        'distance' : ''
+        "name":"",
+        "address" : "",
+        "city" : "",
+        "province" : "the province",
+        "latitude" : "",
+        "longitude" : "",
+        "distance" : ""
     }
     return HttpResponse(simplejson.dumps(data), mimetype="application/javascript")
     
