@@ -4,7 +4,7 @@ $(document).ready(function() {
         
         var text = $('#id_q').val();
         var postal_code = $('#id_postal_code').val();
-        
+        $('#loading').show();
         $.ajax({
            type: "POST",
            url: SEARCH_JSON,
