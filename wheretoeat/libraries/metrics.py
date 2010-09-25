@@ -20,7 +20,10 @@ class Metric(object):
         #  u'id': u'635111',
         #  u'name': u'Florentine Court Dining Room'}
         self.yp_listing = yp_listing
-        self.metric_rating = self.apply_metrics()
+        if type(self.yp_listing) <> 'dict':
+            self.metric_rating = 0
+        else:
+            self.metric_rating = self.apply_metrics()
         
     def _load_foursquare_data(self, listing, l=1):
         cache_key = "%s_%s" % (self.CACHE_KEY, listing.get('id'))
@@ -52,7 +55,11 @@ class Metric(object):
 
         return total
     def calculate_weather_metric(self):
-        city = self.yp_listing.get("address").get("city", "")
+        # sloppy but we're running out of time.
+        try:
+            city = self.yp_listing.get("address", "").get("city", "")
+        except:
+            return 0
         gw = GoogleWeather(location=city)
         return gw.getCurrentConditionMultiplier()
     
@@ -63,10 +70,39 @@ class Metric(object):
         """
         Check the total number of checkins on FourSquare.
         """
-        foursquare_data = self._load_foursquare_data(self.yp_listing)
-        stats = self._foursquare_stats(foursquare_data)
         return 0
+        '''
+        foursquare_data = self._load_foursquare_data(self.yp_listing)
+       
+
+        # assume that every foursquare place has an id (short on time here)
+        vID = foursquare_data.get('groups')[0]['venues'][0]['id']
+        foursquare = FourSquareApi()
+        data = foursquare.get_venue_detail(vID)
+       
+        numCheckins = data['venue']['stats']['checkins']
         
+        weighting = 0
+        if 1 <= numCheckins <= 5:
+            weighting = 0.1  
+        elif 6 <= numCheckins <= 10:
+            weighting = 0.2
+        elif 11 <= numCheckins <= 16:
+            weighting = 0.5
+        elif 17 <= numCheckins <= 25:
+            weighting = 0.6
+        elif 26 <= numCheckins <= 30:
+            weighting = 0.7
+        elif 31 <= numCheckins <= 35:
+            weighting = 0.8
+        elif 36 <= numCheckins <= 40:
+            weighting = 0.9
+        elif numCheckins >= 41:
+            weighting = 1.0
+
+        vID = foursquare_data.get('id')
+        return weighting
+        '''
     def calculate_saturation(self):
         """
         Check the total number of people currently checked in.
