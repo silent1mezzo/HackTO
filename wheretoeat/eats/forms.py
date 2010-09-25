@@ -1,6 +1,5 @@
 from django import forms
 
 class QueryForm(forms.Form):
-    q = forms.CharField()
-    postal_code = forms.CharField(initial='M5V 2H5')
-
+    q = forms.CharField(widget=forms.TextInput(attrs={'class':'small-input'}))
+    postal_code = forms.CharField(widget=forms.TextInput(attrs={'class':'small-postal'}), initial='M5V 2H5')

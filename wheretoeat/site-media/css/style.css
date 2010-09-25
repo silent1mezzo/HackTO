@@ -15,10 +15,13 @@
 }
 
 #header .logo { 
-	font-family: Code,Helvetica,Arial,sans-serif;
+	padding: 26px 0 0 260px; 
+}
+
+#header .logo a {
+    font-family: Code,Helvetica,Arial,sans-serif;
 	font-size: 48px;
 	color: #A8DBA8;
-	padding: 26px 0 0 260px; 
 }
 /* CONTENT */
 input { 
@@ -34,7 +37,7 @@ input {
 	/*height: 30px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; */
 }
 
-#search { margin-left: 300px;}
+.search { margin-left: 300px;}
 
 .button {
 	
@@ -613,11 +616,17 @@ form .wysiwyg {
             
 form .small-input {
                 width: 25% !important;
+                height: 30px;
+                font-size: 18px;
 				margin-right: 10px;
+				border: 1px solid #CCC;
                 }
 form .small-postal {
 				width: 10% !important;
+				height: 30px;
+				font-size: 18px;
 				margin-right: 10px;
+				border: 1px solid #CCC;
 }
                 
 form .medium-input {
