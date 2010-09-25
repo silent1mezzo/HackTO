@@ -15,17 +15,20 @@ $(document).ready(function() {
                'postal_code' : postal_code
            },
            success: function(data, textStatus, XMLHttpRequest){
-               $('#id_company_name').text(data.name);
-               $('#id_street_address').text(data.street_address);
-               $('#id_prov').text(data.province);
-               $('#id_city').text(data.city);
-               
                $('#loading').hide();
-               $('#result').show();
+               if (data.status == 'EMPTY') {
+                   alert('empty');
+               }
+               else {
+                   $('#id_company_name').text(data.name);
+                   $('#id_street_address').text(data.street_address);
+                   $('#id_prov').text(data.province);
+                   $('#id_city').text(data.city);
+                   $('#result').show();
+               }
            },
            error: function(XMLHttpRequest, textStatus, errorThrown) {
                alert('oh shit');
-               alert(textStatus);
            } 
          });
     });

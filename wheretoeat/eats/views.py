@@ -31,15 +31,20 @@ def search(request):
 def search_json(request):
     q = request.POST.get('q')
     postal_code = request.POST.get('postal_code')
-    try:
-        result = FindBestEat(postal_code, q)
-    except Exception, e:
-        import pdb;pdb.set_trace()
-    listing = result.listing
+    result = FindBestEat(postal_code, q)
+
+    if not result.listing:
+        data = {
+            "status" : "EMPTY",
+        }
+        return HttpResponse(simplejson.dumps(data), mimetype="application/javascript")
+
+    listing = result.listing    
     address = listing.get('address')
     geocode = listing.get('geoCode')
 
     data = {
+        "status" : "OK",
         "name" : listing.get('name'),
         "street_address" : address.get('street'),
         "city" : address.get('city'),
