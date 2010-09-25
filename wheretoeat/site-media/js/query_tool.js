@@ -46,7 +46,7 @@ $(document).ready(function() {
                }
            },
            error: function(XMLHttpRequest, textStatus, errorThrown) {
-               alert('Um... shit.');
+               alert('Um... crap. This wasn't supposed to happen.');
            } 
          });
     });
