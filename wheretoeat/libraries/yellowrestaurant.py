@@ -11,8 +11,10 @@ class YellowRestaurantAPI(YellowAPI):
         what = "restaurant " + what
         resultsDict = json.loads(self.find_business(what,where,uid,page,page_len, sflag, lang))
         listings = resultsDict.get('listings')
+        if not listings:
+            return []
         filteredResults = []
-        
+        print 'this is listings: ', listings        
         for listing in listings:
             if float(listing.get('distance')) < float(maxDistance):
                 self.clean_listing(listing)
