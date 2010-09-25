@@ -101,6 +101,7 @@ INSTALLED_APPS = (
     'south',
     'debug_toolbar',
     'clean',
+    'eats',
 )
 
 SOUTH_AUTO_FREEZE_APP = True
