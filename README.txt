@@ -8,3 +8,7 @@ Getting Started
 - install your requirements.
 
     pip install -r requirements.txt    
+
+- create wheretoeat/localsettings.py
+
+    add YELLOWPAGES_API_KEY using your api key from Yellow Pages
