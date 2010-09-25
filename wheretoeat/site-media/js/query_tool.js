@@ -5,6 +5,7 @@ $(document).ready(function() {
         var text = $('#id_q').val();
         var postal_code = $('#id_postal_code').val();
         $('#result').hide();
+        $('#error').hide();
         $('#loading').show();
         $.ajax({
            type: "POST",
@@ -15,17 +16,20 @@ $(document).ready(function() {
                'postal_code' : postal_code
            },
            success: function(data, textStatus, XMLHttpRequest){
-               $('#id_company_name').text(data.name);
-               $('#id_street_address').text(data.street_address);
-               $('#id_prov').text(data.province);
-               $('#id_city').text(data.city);
-               
                $('#loading').hide();
-               $('#result').show();
+               if (data.status == 'EMPTY') {
+                   $('#error').show();
+               }
+               else {
+                   $('#id_company_name').text(data.name);
+                   $('#id_street_address').text(data.street_address);
+                   $('#id_prov').text(data.province);
+                   $('#id_city').text(data.city);
+                   $('#result').show();
+               }
            },
            error: function(XMLHttpRequest, textStatus, errorThrown) {
-               alert('oh shit');
-               alert(textStatus);
+               alert('Um... shit.');
            } 
          });
     });
