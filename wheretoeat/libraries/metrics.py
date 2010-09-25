@@ -1,7 +1,7 @@
 from django.core.cache import cache
 
 from libraries.foursquare import Api as FourSquareApi
-
+from libraries.weather.weather import GoogleWeather
 
 class Metric(object):
     """
@@ -41,6 +41,7 @@ class Metric(object):
         
         metrics = (
             # (func_name, weight)
+            (self.calculate_weather_metric, 1.0),
             (self.calculate_distance_metric, 1.0),
             (self.calculate_popularity, 1.0),
             (self.calculate_saturation, 1.0),
@@ -50,6 +51,10 @@ class Metric(object):
             total += f() * weight
 
         return total
+    def calculate_weather_metric(self):
+        city = self.yp_listing.get("address").get("city", "")
+        gw = GoogleWeather(location=city)
+        return gw.getCurrentConditionMultiplier()
     
     def calculate_distance_metric(self):
         return 1 - float(self.yp_listing.get('distance', 1))
