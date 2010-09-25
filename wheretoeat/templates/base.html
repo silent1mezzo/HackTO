@@ -34,7 +34,6 @@
 			</div>
 			<div id="main-content"> <!-- Main Content Section with everything --> 
 					<form action="{% url search_json %}" method="post"> 	
-						{% csrf_token %}
 						<p>
 						    {{ form.q }}
 						    {{ form.postal_code }}

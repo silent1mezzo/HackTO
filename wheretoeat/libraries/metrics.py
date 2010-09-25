@@ -63,11 +63,24 @@ class Metric(object):
         """
         Check the total number of checkins on FourSquare.
         """
+        foursquare_data = self._load_foursquare_data(self.yp_listing)
+        stats = self._foursquare_stats(foursquare_data)
         return 0
         
     def calculate_saturation(self):
         """
         Check the total number of people currently checked in.
         """
-        return 0
+        foursquare_data = self._load_foursquare_data(self.yp_listing)
+        stats = self._foursquare_stats(foursquare_data)
+        return int(stats.get('herenow', 0))
     
+    def _foursquare_stats(self, data): 
+        groups = data.get('groups', None)
+        if groups:
+            for match in groups:
+                for venue in match.get('venues'):
+                    if venue.get('name', '') <> self.yp_listing.get('name'):
+                        continue
+                    return venue.get('stats', '')     
+        return {}
