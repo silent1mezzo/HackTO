@@ -20,5 +20,5 @@ class FindBestEat(object):
             listing['relevanceRank'] = relevanceRank
             if listing['relevanceRank'] > mostRelevant:
                 mostRelevant = listing['relevanceRank']
-            count+=1
+            count += 1
         self.listing = listing      

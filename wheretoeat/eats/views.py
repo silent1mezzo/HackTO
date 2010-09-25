@@ -6,6 +6,7 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 
 from eats.forms import QueryForm
+from libraries.findeat import FindBestEat
 
 def index(request):
     template_name = 'base.html'
@@ -28,20 +29,26 @@ def search(request):
 
 
 def search_json(request):
-    print request.POST
     q = request.POST.get('q')
     postal_code = request.POST.get('postal_code')
-    
-    
+        
+    result = FindBestEat(postal_code, q)
+    listing = result.listing
+    address = listing.get('address')
+    geocode = listing.get('geoCode')
+
     data = {
-        "name":"",
-        "address" : "",
-        "city" : "",
-        "province" : "the province",
-        "latitude" : "",
-        "longitude" : "",
-        "distance" : ""
+        "name" : listing.get('name'),
+        "street_address" : address.get('street'),
+        "city" : address.get('city'),
+        "province" : address.get('prov'),
+        "latitude" : geocode.get('latitude'),
+        "longitude" : geocode.get('longitude'),
+        "distance" : listing.get('distance'),
+        "id" : listing.get('id'),
+        'relavence_rank' : listing.get('relevanceRank'),
     }
+    
     return HttpResponse(simplejson.dumps(data), mimetype="application/javascript")
     
     
