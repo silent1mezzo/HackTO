@@ -26,6 +26,7 @@ $(document).ready(function() {
                    $('#id_prov').text(data.province);
                    $('#id_city').text(data.city);
                    $('#id_rank').text(data.relavence_rank);
+                   $('#id_distance').text(data.distance);
                    $('#result').show();
                }
            },
