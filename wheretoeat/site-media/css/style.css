@@ -90,6 +90,7 @@ input {
     border-top-right-radius: 5px 5px;
     padding: 18px;
     width: 90%;
+    display: none;
 }
 
 #result .logo { float: left; }

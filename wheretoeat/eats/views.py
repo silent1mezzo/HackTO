@@ -27,17 +27,17 @@ def search(request):
     return render_to_response(template_name, context, context_instance=RequestContext(request))
 
 
-def search_json(request, postal_code):
+def search_json(request):
     
     
     data = {
         'name' : '',
         'address' : '',
         'city' : '',
-        'province' : '',
+        'province' : 'the province',
         'latitude' : '',
         'longitude' : '',
-        'distance' : '',
+        'distance' : ''
     }
     return HttpResponse(simplejson.dumps(data), mimetype="application/javascript")
     
