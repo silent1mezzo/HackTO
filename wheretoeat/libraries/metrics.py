@@ -21,9 +21,9 @@ class Metric(object):
         
         metrics = (
             # (func_name, weight)
-            (self._calculate_distance_metric, 1.0),
-            (self._calculate_popularity, 1.0),
-            (self._calculate_saturation, 1.0),
+            (self.calculate_distance_metric, 1.0),
+            (self.calculate_popularity, 1.0),
+            (self.calculate_saturation, 1.0),
         )
         
         for f, weight in metrics:
@@ -31,16 +31,16 @@ class Metric(object):
 
         return total
     
-    def _calculate_distance_metric(self):
+    def calculate_distance_metric(self):
         return 1 - self.yp_listing.get('distance', 1)
         
-    def _calculate_popularity(self):
+    def calculate_popularity(self):
         """
         Check the total number of checkins on FourSquare.
         """
         return 0
         
-    def _calculate_saturation(self):
+    def calculate_saturation(self):
         """
         Check the total number of people currently checked in.
         """
