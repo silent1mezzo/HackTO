@@ -1,20 +1,52 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>{% block title %}Where To Eat :: Gap Aventures{% endblock %}</title>
-		<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/style.css" media="screen" /> 
-	</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+ 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+ 
+	<head> 
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+		
+		<title>{% block title %}Where To Eat :: Gap Aventures{% endblock %}</title> 
+	
+		<link rel="stylesheet" href="{{MEDIA_URL}}css/reset.css" type="text/css" media="screen" /> 
+	  
+		<link rel="stylesheet" href="{{MEDIA_URL}}css/style.css" type="text/css" media="screen" /> 
+	
+		<link rel="stylesheet" href="{{MEDIA_URL}}css/invalid.css" type="text/css" media="screen" />	
+		
+		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.js"></script> 
+		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.maps.js"></script> 
+		{% block includes %}{% endblock %}
+	</head> 
+  
 	<body>
-		<div id='wrapper'>
+		<div id="body-wrapper"> <!-- Wrapper for the radial gradient background --> 
 			<div id='header'>
-				
+				<div class='logo'>
+					Where To Eat
+				</div>
 			</div>
-			<div id='content'>
-				{% block content %}<input type='text' value='Search Here'>{% endblock %}
-			</div>
-			<div id='footer'>
-				
-			</div>
-		</div>
-	</body>
+			<div id="main-content"> <!-- Main Content Section with everything --> 
+				{% block content %}
+					<form action="{% url search %}" method="post" id="search"> 	
+						{% csrf_token %}
+						<p> 
+							<input class="text-input small-input" type="text" id="small-input" onfocus="if($(this).val() == 'What should I eat?') { $(this).val('');}" onblur="if($(this).val() == ''){ $(this).val('What should I eat?'); }" name="search" value="What should I eat?" />
+							<input class="text-input small-postal" type="text" id="small-input" onfocus="if($(this).val() == 'Postal Code') { $(this).val('');}" onblur="if($(this).val() == ''){ $(this).val('Postal Code'); }" name="postal_code" value="Postal Code" />
+							<input type="submit" class="medium button blue" value="Go" />
+						</p> 
+					</form> 
+				{% endblock %}
+			
+			<div id="footer"> 
+				<small> <!-- Remove this notice or replace it with whatever you want --> 
+						&#169; Copyright 2010 Gap Adventures
+				</small> 
+			</div><!-- End #footer --> 
+			
+		</div> <!-- End #main-content --> 
+		
+	</div></body> 
+  
 </html>
