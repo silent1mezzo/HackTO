@@ -20,7 +20,7 @@ class Metric(object):
         #  u'id': u'635111',
         #  u'name': u'Florentine Court Dining Room'}
         self.yp_listing = yp_listing
-        if type(self.yp_listing) <> 'dict':
+        if type(self.yp_listing) <> dict:
             self.metric_rating = 0
         else:
             self.metric_rating = self.apply_metrics()
