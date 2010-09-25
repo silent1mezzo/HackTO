@@ -127,7 +127,7 @@ input {
     border-top-left-radius: 4px 4px;
     border-top-right-radius: 4px 4px;
     margin: 0px 0px 18px;
-    padding: 9px;
+    padding:9px;
 }
 
 .z-clearfix {
@@ -136,12 +136,11 @@ input {
 }
 
 .metrics .z-section span {
-    border-left: ;
     color: #4A4130;
     font-size: 17px;
     font-weight: bold;
-    margin: 0px 0px 0px 18px;
-    padding: 0px 0px 0px 18px;
+    margin: 0px 0px 0px 9px;
+    padding: 0px 0px 0px 0px;
 }
 
 /********************************      Basic Structure      ********************************/
