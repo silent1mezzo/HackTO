@@ -27,6 +27,21 @@ $(document).ready(function() {
                    $('#id_city').text(data.city);
                    $('#id_rank').text(data.relavence_rank);
                    $('#id_distance').text(data.distance);
+                   
+                   
+                   $('.map_canvas').googleMaps({
+						scroll: false,
+						depth: 16 ,
+						latitude: data.latitude,
+						longitude: data.longitude,
+						markers: {
+							latitude: 	data.latitude,
+							longitude: data.longitude
+						}
+					});
+                   
+                   
+                   
                    $('#result').show();
                }
            },
