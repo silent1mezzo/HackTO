@@ -15,6 +15,8 @@ class YellowRestaurantAPI(YellowAPI):
             return []
         filteredResults = []
         for listing in listings:
+            if not listing.get('distance'):
+                continue
             if float(listing.get('distance')) < float(maxDistance):
                 self.clean_listing(listing)
                 filteredResults.append(listing)

@@ -9,11 +9,15 @@ class FindBestEat(object):
         self.query = query
         self.ypAPI = YellowRestaurantAPI(api_key = settings.YELLOWPAGES_API_KEY)
 
-        results = self.ypAPI.find_restaurant(self.query, self.postal_code, uid='127.0.0.1', maxDistance=1.0)
+        try:
+            results = self.ypAPI.find_restaurant(self.query, self.postal_code, uid='127.0.0.1', maxDistance=1.0)
+            print results
+        except:
+            print '******'
         
         mostRelevant = {'relevanceRank': -1}
         count = 0
-        for listing in results :
+        for listing in results:
             if count > 10:
                 break
             relevanceRank = Metric(listing).metric_rating 
