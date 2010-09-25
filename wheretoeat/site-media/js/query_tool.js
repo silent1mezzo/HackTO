@@ -3,7 +3,7 @@ $(document).ready(function() {
         e.preventDefault();
         
         $.getJSON(SEARCH_JSON, function(data) {
-            alert(data.province);
+            $('#result').show();
         });
     });
 });
