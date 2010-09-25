@@ -27,6 +27,8 @@ $(document).ready(function() {
                    $('#id_city').text(data.city);
                    $('#id_rank').text(data.relavence_rank);
                    $('#id_distance').text(data.distance);
+                   $('#id_weather').text(data.weather_desc);
+                   $('#weather_icon').attr("src", data.weather_icon);
                    
                    
                     //                    $('.map_canvas').googleMaps({

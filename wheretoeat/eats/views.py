@@ -45,8 +45,10 @@ def search_json(request):
     geocode = listing.get('geoCode')
 
 
-    # {u'distance': u'0.9', u'name': u'Thai Island Restaurant', u'address': {u'city': u'York', u'pcode': u'M9N1L5', u'street': u'130 King St', u'prov': u'ON'}, u'geoCode': {u'latitude': u'43.64809157', u'longitude': u'-79.382931673'}, 'details': '{"phones":[{"type":"primary","npa":"416","nxx":"203","num":"7745","dispNum":"416-203-7745"}],"categories":[{"name":"Restaurants","isSensitive":false}],"products":{"webUrl":[],"dispAd":[],"videos":[],"photos":[],"profiles":[],"listPres":[]},"logos":[],"id":"1567984","name":"Thai Island Restaurant","address":{"street":"130 King St","city":"York","prov":"ON","pcode":"M9N1L5"},"geoCode":{"latitude":"43.64809157","longitude":"-79.382931673"},"merchantUrl":"http:\\/\\/www.yellowpages.ca\\/bus\\/Ontario\\/York\\/Thai-Island-Restaurant\\/1567984.html"}', 'weather': u'Mostly Cloudy', u'id': u'1567984', 'relevanceRank': 0}
-    print listing
+# {u'distance': u'0.8', u'name': u'Grange Hotel', u'address': {u'city': u'Toronto', u'pcode': u'M5T2V5', u'street': u'165 Grange Ave', u'prov': u'ON'}, u'geoCode': {u'latitude': u'43.651055981', u'longitude': u'-79.401348179'}, 'details': '{"phones":[{"type":"primary","npa":"416","nxx":"603","num":"7700","dispNum":"416-603-7700"}],"categories":[{"name":"Hotels","isSensitive":false},{"name":"Tourist Accommodation","isSensitive":false},{"name":"Hotels-Apartment","isSensitive":false}],"products":{"webUrl":["http:\\/\\/www.grangehotel.com"],"dispAd":[{"url":"http:\\/\\/ci.yp.ca\\/14531565ag_f.jpg","thmbUrl":"http:\\/\\/ci.yp.ca\\/14531565ag_t.gif"}],"videos":[{"url":"http:\\/\\/cdn.media.yp.ca\\/20494\\/1246329736421.flv","thmbUrl":"http:\\/\\/cdn.media.yp.ca\\/20494\\/1246329736421_t.jpg"}],"photos":[],"profiles":[{"lang":"en","keywords":{"MthdPmt":["American Express","Cash","Discover","Gift Certificate","Interac","JCB","MasterCard","Traveller Cheque","Visa"],"LangSpk":["English"],"GetThr":["North to Grange Ave","Turn Right on Augusta","First Traffic Light West of Spadina","From QEW and Gardiner Expressway","Go North on Spadina to Queen"],"ProdServ":["All Major Credit Cards Accepted","Cable TV","Clean & Quiet Modern Building","Coin Laundry on Each Floor","Comfortable Studio Units","Direct Dial Telephones","Economy Rates","Equipped Kitchenette","Free Hi-Speed Internet Access","Hotel Accommodations","Individual Heat and Air","On-Site Parking","Private Bath with Shower"]}}],"listPres":[]},"logos":[],"id":"2297558","name":"Grange Hotel","address":{"street":"165 Grange Ave","city":"Toronto","prov":"ON","pcode":"M5T2V5"},"geoCode":{"latitude":"43.651055981","longitude":"-79.401348179"},"merchantUrl":"http:\\/\\/www.yellowpages.ca\\/bus\\/Ontario\\/Toronto\\/Grange-Hotel\\/2297558.html"}', 'weather': u'Mostly Cloudy', u'id': u'2297558', 'relevanceRank': 0.89999999999999991}
+
+
+    
     data = {
         "status" : "OK",
         "name" : listing.get('name'),
@@ -58,6 +60,8 @@ def search_json(request):
         "distance" : listing.get('distance'),
         "id" : listing.get('id'),
         'relavence_rank' : "%.4f" %(2 + float(listing.get('relevanceRank'))),
+        'weather_desc' : listing.get('weather'),
+        'weather_icon' : listing.get('weather_icon'),
     }
     
     return HttpResponse(simplejson.dumps(data), mimetype="application/javascript")

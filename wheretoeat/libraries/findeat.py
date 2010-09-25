@@ -32,3 +32,4 @@ class FindBestEat(object):
         self.listing['details'] = self.ypAPI.get_business_details(prov, busName, busID, uid='127.0.0.1')
         gw = GoogleWeather(location=self.listing['address']['city'])
         self.listing['weather'] = gw.getCurrentCondition()
+        self.listing['weather_icon'] = gw.getWeatherIcon()

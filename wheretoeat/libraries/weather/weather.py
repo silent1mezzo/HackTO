@@ -21,3 +21,7 @@ class GoogleWeather(object):
         cc = self.getCurrentCondition()
         weighting = weather_conditions_multiplier.get(cc, 1)
         return weighting 
+        
+    def getWeatherIcon(self):
+        weatherDetails = pywapi.get_weather_from_google(self.location)
+        return "http://www.google.com%s" %(weatherDetails.get('current_conditions').get('icon'))
