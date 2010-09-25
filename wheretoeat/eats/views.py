@@ -46,7 +46,7 @@ def search_json(request):
 
 
     # {u'distance': u'0.9', u'name': u'Thai Island Restaurant', u'address': {u'city': u'York', u'pcode': u'M9N1L5', u'street': u'130 King St', u'prov': u'ON'}, u'geoCode': {u'latitude': u'43.64809157', u'longitude': u'-79.382931673'}, 'details': '{"phones":[{"type":"primary","npa":"416","nxx":"203","num":"7745","dispNum":"416-203-7745"}],"categories":[{"name":"Restaurants","isSensitive":false}],"products":{"webUrl":[],"dispAd":[],"videos":[],"photos":[],"profiles":[],"listPres":[]},"logos":[],"id":"1567984","name":"Thai Island Restaurant","address":{"street":"130 King St","city":"York","prov":"ON","pcode":"M9N1L5"},"geoCode":{"latitude":"43.64809157","longitude":"-79.382931673"},"merchantUrl":"http:\\/\\/www.yellowpages.ca\\/bus\\/Ontario\\/York\\/Thai-Island-Restaurant\\/1567984.html"}', 'weather': u'Mostly Cloudy', u'id': u'1567984', 'relevanceRank': 0}
-
+    print listing
     data = {
         "status" : "OK",
         "name" : listing.get('name'),
