@@ -57,7 +57,7 @@ def search_json(request):
         "longitude" : geocode.get('longitude'),
         "distance" : listing.get('distance'),
         "id" : listing.get('id'),
-        'relavence_rank' : listing.get('relevanceRank'),
+        'relavence_rank' : "%.4f" %(2 + float(listing.get('relevanceRank'))),
     }
     
     return HttpResponse(simplejson.dumps(data), mimetype="application/javascript")
