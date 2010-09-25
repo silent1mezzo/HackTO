@@ -14,7 +14,6 @@ class YellowRestaurantAPI(YellowAPI):
         if not listings:
             return []
         filteredResults = []
-        print 'this is listings: ', listings        
         for listing in listings:
             if float(listing.get('distance')) < float(maxDistance):
                 self.clean_listing(listing)
