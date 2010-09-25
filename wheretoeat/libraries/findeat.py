@@ -12,10 +12,13 @@ class FindBestEat(object):
         results = self.ypAPI.find_restaurant(self.query, self.postal_code, uid='127.0.0.1', maxDistance=1.0)
         
         mostRelevant = {'relevanceRank': -1}
+        count = 0
         for listing in results :
+            if count > 10:
+                break
             relevanceRank = Metric(listing).metric_rating 
             listing['relevanceRank'] = relevanceRank
             if listing['relevanceRank'] > mostRelevant:
                 mostRelevant = listing['relevanceRank']
-
+            count+=1
         self.listing = listing      
