@@ -8,8 +8,14 @@
 
 /* HEADER */
 #header { margin: 0; padding: 0; height:100px; width:100%; background-color:#0B486B;}
+
+@font-face {
+  font-family: Code;
+  src: url(http://localhost:8000/site-media/fonts/MuseoSans_500.otf);
+}
+
 #header .logo { 
-	font-family: Arial,Helvetica,sans-serif;
+	font-family: Code,Helvetica,Arial,sans-serif;
 	font-size: 48px;
 	color: #A8DBA8;
 	padding: 26px 0 0 260px; 
@@ -142,6 +148,11 @@ input {
     font-weight: bold;
     margin: 0px 0px 0px 9px;
     padding: 0px 0px 0px 0px;
+}
+
+.metrics .z-section img {
+    height: 28px;
+    width: 28px;
 }
 
 /********************************      Basic Structure      ********************************/
