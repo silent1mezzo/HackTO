@@ -615,14 +615,14 @@ form .wysiwyg {
                 }
             
 form .small-input {
-                width: 25% !important;
+                width: 300px !important;
                 height: 30px;
                 font-size: 18px;
 				margin-right: 10px;
 				border: 1px solid #CCC;
                 }
 form .small-postal {
-				width: 10% !important;
+				width: 150px !important;
 				height: 30px;
 				font-size: 18px;
 				margin-right: 10px;
