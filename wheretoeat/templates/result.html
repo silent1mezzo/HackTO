@@ -20,7 +20,7 @@
 			<div class='metrics'>
 				Weather:
 				Distance:
-				Foursquare: 
+				<img src='{{MEDIA_URL}}images/foursquare.png' />
 			</div>
 		</div>
 		<div class='map_canvas'></div>
@@ -29,6 +29,9 @@
 			$(document).ready(function() { 
     			$('.map_canvas').googleMaps({
 					scroll: false,
+					depth: 16 ,
+					latitude: 37.4416,
+        			longitude: -122.1516,
         			markers: {
             			latitude: 	37.4416,
             			longitude: -122.1516
