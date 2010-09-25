@@ -21,4 +21,8 @@ class FindBestEat(object):
             if listing['relevanceRank'] > mostRelevant:
                 mostRelevant = listing['relevanceRank']
             count+=1
-        self.listing = listing      
+        self.listing = listing
+        prov = self.listing['address']['prov']
+        busName = self.ypAPI.encode_business_name(self.listing['name'])
+        busID = self.listing['id']
+        self.listing['details'] = self.ypAPI.get_business_details(prov, busName, busID, uid='127.0.0.1')
