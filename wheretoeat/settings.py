@@ -130,6 +130,8 @@ DEBUG_TOOLBAR_CONFIG = {
     'HIDE_DJANGO_SQL': False,
 }
 
+# change to memcache in production.
+CACHE_BACKEND = 'locmem://'
 
 # Place settings you want overridden for local development
 # in localsettings.py file in your projects root.
