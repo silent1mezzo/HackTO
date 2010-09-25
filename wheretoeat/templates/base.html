@@ -17,6 +17,8 @@
 		
 		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.js"></script> 
 		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.maps.js"></script>
+		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.maps.js"></script> 
+		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAVjNv9nnj6F_E2Mdsu4auQBRvAmg9-wCdwQ3HThb0eBO0NxMtrRQc7a0JdGP4remzOUwoFRx_D1meLg" type="text/javascript"></script>
 		<script type="text/javascript" src="{{MEDIA_URL}}js/query_tool.js"></script>
 		<script type='text/javascript'>
 		    var SEARCH_JSON = "{% url search_json %}";
@@ -32,7 +34,6 @@
 				</div>
 			</div>
 			<div id="main-content"> <!-- Main Content Section with everything --> 
-				{% block content %}
 					<form action="{% url search %}" method="post" id="search"> 	
 						{% csrf_token %}
 						<p> 
@@ -40,9 +41,42 @@
 							<input class="text-input small-postal" type="text" id="small-input" onfocus="if($(this).val() == 'Postal Code') { $(this).val('');}" onblur="if($(this).val() == ''){ $(this).val('Postal Code'); }" name="postal_code" value="Postal Code" />
 							<input type="submit" class="medium button blue" value="Go" />
 						</p> 
-					</form> 
-				{% endblock %}
-			
+					</form>
+					
+					<div id='result'>
+						<div class='logo'>
+							<img src='http://www.ctd.northwestern.edu/images/youtube-logo(2).jpg' />
+						</div>
+						<div class='company'>
+							<h3>Youtube Bitches!</h3>
+							<ul>
+								<li>123 Fuck You FTW!</li>
+								<li>Other stupid Information</li>
+							</ul>
+							<div class='metrics'>
+								Weather:
+								Distance:
+								<img src='{{MEDIA_URL}}images/foursquare.png' />
+							</div>
+						</div>
+						<div class='map_canvas'></div>
+						<div style='clear:both;'></div>
+						<script>
+							$(document).ready(function() { 
+    							$('.map_canvas').googleMaps({
+									scroll: false,
+									depth: 16 ,
+									latitude: 37.4416,
+        							longitude: -122.1516,
+        							markers: {
+            							latitude: 	37.4416,
+            							longitude: -122.1516
+        							}
+    							}); 
+							}); 
+						</script>
+					</div>
+	
 			<div id="footer"> 
 				<small> <!-- Remove this notice or replace it with whatever you want --> 
 						&#169; Copyright 2010 Gap Adventures
