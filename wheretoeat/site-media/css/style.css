@@ -157,7 +157,9 @@ input {
     height: 28px;
     width: 28px;
 }
-
+.metrics .z-section li {
+    list-style-image: none;
+}
 /********************************      Basic Structure      ********************************/
 
 html {

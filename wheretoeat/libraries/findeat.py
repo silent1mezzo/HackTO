@@ -23,6 +23,8 @@ class FindBestEat(object):
             if listing['relevanceRank'] > mostRelevant:
                 mostRelevant = listing['relevanceRank']
             count+=1
+            if count > 8:
+                break
         self.listing = listing
         prov = self.listing['address']['prov']
         busName = self.ypAPI.encode_business_name(self.listing['name'])
