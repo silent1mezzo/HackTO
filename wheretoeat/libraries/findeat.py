@@ -17,12 +17,12 @@ class FindBestEat(object):
         
         mostRelevant = {'relevanceRank': -1}
         count = 0
-        for listing in results:
-            if count > 10:
-                break
+        for listing in results :
             relevanceRank = Metric(listing).metric_rating 
             listing['relevanceRank'] = relevanceRank
             if listing['relevanceRank'] > mostRelevant:
                 mostRelevant = listing['relevanceRank']
             count += 1
+            if count > 5:
+                break
         self.listing = listing      
