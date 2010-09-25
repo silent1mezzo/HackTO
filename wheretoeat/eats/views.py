@@ -5,7 +5,7 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect, HttpRespons
 from django.conf import settings
 from django.core.urlresolvers import reverse
 
-from eats.forms import 
+from eats.forms import QueryForm
 
 def index(request):
     template_name = 'base.html'
