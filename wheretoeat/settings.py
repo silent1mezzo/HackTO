@@ -100,6 +100,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'south',
     'debug_toolbar',
+    'clean',
 )
 
 SOUTH_AUTO_FREEZE_APP = True
