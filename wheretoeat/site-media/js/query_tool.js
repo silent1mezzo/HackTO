@@ -4,6 +4,7 @@ $(document).ready(function() {
         
         var text = $('#id_q').val();
         var postal_code = $('#id_postal_code').val();
+        $('#result').hide();
         $('#loading').show();
         $.ajax({
            type: "POST",
@@ -14,7 +15,8 @@ $(document).ready(function() {
                'postal_code' : postal_code
            },
            success: function(data, textStatus, XMLHttpRequest){
-             $('#result').show();
+               $('#loading').hide();
+               $('#result').show();
            },
            error: function(XMLHttpRequest, textStatus, errorThrown) {
                alert('oh shit');

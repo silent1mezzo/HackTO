@@ -56,6 +56,7 @@ class YellowAPI(object):
 				'lang': lang, 'UID': uid
 				}
 		url = self._build_url('GetBusinessDetails', **kws)
+		print url
 		return self._perform_request(url)
 
 
