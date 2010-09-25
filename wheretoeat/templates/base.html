@@ -17,8 +17,7 @@
 		
 		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.js"></script> 
 		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.maps.js"></script>
-		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.maps.js"></script> 
-		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAVjNv9nnj6F_E2Mdsu4auQBRvAmg9-wCdwQ3HThb0eBO0NxMtrRQc7a0JdGP4remzOUwoFRx_D1meLg" type="text/javascript"></script>
+		<!-- <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAVjNv9nnj6F_E2Mdsu4auQBRvAmg9-wCdwQ3HThb0eBO0NxMtrRQc7a0JdGP4remzOUwoFRx_D1meLg" type="text/javascript"></script> -->
 		<script type="text/javascript" src="{{MEDIA_URL}}js/query_tool.js"></script>
 		<script type='text/javascript'>
 		    var SEARCH_JSON = "{% url search_json %}";
@@ -34,7 +33,7 @@
 				</div>
 			</div>
 			<div id="main-content"> <!-- Main Content Section with everything --> 
-					<form action="{% url search_json %}" method="post" id="search"> 	
+					<form action="{% url search_json %}" method="post"> 	
 						{% csrf_token %}
 						<p>
 						    {{ form.q }}
@@ -42,7 +41,7 @@
 							<!-- <input class="text-input small-input" type="text" id="small-input" onfocus="if($(this).val() == 'What should I eat?') { $(this).val('');}" onblur="if($(this).val() == ''){ $(this).val('What should I eat?'); }" name="search" value="What should I eat?" />
 							<input class="text-input small-postal" type="text" id="small-input" onfocus="if($(this).val() == 'Postal Code') { $(this).val('');}" onblur="if($(this).val() == ''){ $(this).val('Postal Code'); }" name="postal_code" value="Postal Code" /> -->
 							
-							<input type="submit" class="medium button blue" value="Go" />
+							<input type="submit" class="medium button blue" value="Go" id="id_search_button"/>
 						</p> 
 					</form>
 					
