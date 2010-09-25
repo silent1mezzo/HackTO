@@ -1,2 +1,4 @@
 *.pyc
 localsettings.py
+hackto.db
+*.log
