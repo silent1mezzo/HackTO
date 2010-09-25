@@ -16,7 +16,11 @@
 		<link rel="stylesheet" href="{{MEDIA_URL}}css/invalid.css" type="text/css" media="screen" />	
 		
 		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.js"></script> 
-		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.maps.js"></script> 
+		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.maps.js"></script>
+		<script type="text/javascript" src="{{MEDIA_URL}}js/query_tool.js"></script>
+		<script type='text/javascript'>
+		    var SEARCH_JSON = "{% url search_json %}";
+		</script>
 		{% block includes %}{% endblock %}
 	</head> 
   
