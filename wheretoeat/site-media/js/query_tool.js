@@ -25,6 +25,7 @@ $(document).ready(function() {
                    $('#id_street_address').text(data.street_address);
                    $('#id_prov').text(data.province);
                    $('#id_city').text(data.city);
+                   $('#id_rank').text(data.relavence_rank);
                    $('#result').show();
                }
            },
