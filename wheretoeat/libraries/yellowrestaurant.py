@@ -3,7 +3,7 @@ import json
 import random
 
 class YellowRestaurantAPI(YellowAPI):
-    def __init__(self, api_key, test_mode=False, format='JSON', handlers=[]):
+    def __init__(self, api_key, test_mode=True, format='JSON', handlers=[]):
         super(YellowRestaurantAPI, self).__init__(api_key, test_mode, format, handlers)
 
     def find_restaurant(self, what, where, uid, page=None, page_len=None,
