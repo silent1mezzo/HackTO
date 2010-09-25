@@ -5,6 +5,7 @@ $(document).ready(function() {
         var text = $('#id_q').val();
         var postal_code = $('#id_postal_code').val();
         $('#result').hide();
+        $('#error').hide();
         $('#loading').show();
         $.ajax({
            type: "POST",
@@ -17,7 +18,7 @@ $(document).ready(function() {
            success: function(data, textStatus, XMLHttpRequest){
                $('#loading').hide();
                if (data.status == 'EMPTY') {
-                   alert('empty');
+                   $('#error').show();
                }
                else {
                    $('#id_company_name').text(data.name);
@@ -28,7 +29,7 @@ $(document).ready(function() {
                }
            },
            error: function(XMLHttpRequest, textStatus, errorThrown) {
-               alert('oh shit');
+               alert('Um... shit.');
            } 
          });
     });

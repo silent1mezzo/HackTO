@@ -12,7 +12,6 @@ class FindBestEat(object):
         results = self.ypAPI.find_restaurant(self.query, self.postal_code, uid='127.0.0.1', maxDistance=1.0)
         if len(results) == 0:
             self.listing = None
-            print "******************"
             return
         
         mostRelevant = {'relevanceRank': -1}
