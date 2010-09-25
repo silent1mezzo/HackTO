@@ -34,11 +34,14 @@
 				</div>
 			</div>
 			<div id="main-content"> <!-- Main Content Section with everything --> 
-					<form action="{% url search %}" method="post" id="search"> 	
+					<form action="{% url search_json %}" method="post" id="search"> 	
 						{% csrf_token %}
-						<p> 
-							<input class="text-input small-input" type="text" id="small-input" onfocus="if($(this).val() == 'What should I eat?') { $(this).val('');}" onblur="if($(this).val() == ''){ $(this).val('What should I eat?'); }" name="search" value="What should I eat?" />
-							<input class="text-input small-postal" type="text" id="small-input" onfocus="if($(this).val() == 'Postal Code') { $(this).val('');}" onblur="if($(this).val() == ''){ $(this).val('Postal Code'); }" name="postal_code" value="Postal Code" />
+						<p>
+						    {{ form.q }}
+						    {{ form.postal_code }}
+							<!-- <input class="text-input small-input" type="text" id="small-input" onfocus="if($(this).val() == 'What should I eat?') { $(this).val('');}" onblur="if($(this).val() == ''){ $(this).val('What should I eat?'); }" name="search" value="What should I eat?" />
+							<input class="text-input small-postal" type="text" id="small-input" onfocus="if($(this).val() == 'Postal Code') { $(this).val('');}" onblur="if($(this).val() == ''){ $(this).val('Postal Code'); }" name="postal_code" value="Postal Code" /> -->
+							
 							<input type="submit" class="medium button blue" value="Go" />
 						</p> 
 					</form>
