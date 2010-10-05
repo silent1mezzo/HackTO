@@ -9,15 +9,15 @@
 		
 		<title>{% block title %}Where To Eat Near You:: Nom Nom Nom Rank{% endblock %}</title> 
 	
-		<link rel="stylesheet" href="{{MEDIA_URL}}css/reset.css" type="text/css" media="screen" /> 
+		<link rel="stylesheet" href="{{MEDIA_URL}}css/reset.css" type="text/css" media="screen" />
 	  
 		<link rel="stylesheet" href="{{MEDIA_URL}}css/style.css" type="text/css" media="screen" /> 
 	
-		<link rel="stylesheet" href="{{MEDIA_URL}}css/invalid.css" type="text/css" media="screen" />	
+		<link rel="stylesheet" href="{{MEDIA_URL}}css/invalid.css" type="text/css" media="screen" />
 		
 		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.js"></script> 
-		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.maps.js"></script>
-		<!-- <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAVjNv9nnj6F_E2Mdsu4auQBRvAmg9-wCdwQ3HThb0eBO0NxMtrRQc7a0JdGP4remzOUwoFRx_D1meLg" type="text/javascript"></script>-->
+		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAVjNv9nnj6F_E2Mdsu4auQBRvAmg9-wCdwQ3HThb0eBO0NxMtrRQc7a0JdGP4remzOUwoFRx_D1meLg" type="text/javascript"></script>
+        <script type="text/javascript" src="{{MEDIA_URL}}js/jquery.gmap.js"></script>
 		<script type="text/javascript" src="{{MEDIA_URL}}js/query_tool.js"></script>
 		<script type='text/javascript'>
 		    var SEARCH_JSON = "{% url search_json %}";
@@ -86,19 +86,15 @@
 								</div>-->
 							</div>
 						</div>
-						<div class='map_canvas'></div>
-						<div style='clear:both;'></div>
-
 					</div>
-	
 			<div id="footer"> 
 				<small> <!-- Remove this notice or replace it with whatever you want --> 
 						<a href='#'>About Us</a> | &#169; Copyright 2010
 				</small> 
 			</div><!-- End #footer --> 
-			
 		</div> <!-- End #main-content --> 
 		
-	</div></body> 
-  
+	</div>
+<div id='map'></div>
+</body> 
 </html>

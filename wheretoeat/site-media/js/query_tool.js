@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#id_search_button').click(function(e){
+        $('#map').hide();
         e.preventDefault();
-        
         var text = $('#id_q').val();
         var postal_code = $('#id_postal_code').val();
         $('#result').hide();
@@ -30,18 +30,21 @@ $(document).ready(function() {
                    $('#id_weather').text(data.weather_desc);
                    $('#weather_icon').attr("src", data.weather_icon);
                    
-                   
-                    //                    $('.map_canvas').googleMaps({
-                    //  scroll: false,
-                    //  depth: 16 ,
-                    //  latitude: data.latitude,
-                    //  longitude: data.longitude,
-                    //  markers: {
-                    //      latitude:   data.latitude,
-                    //      longitude: data.longitude
-                    //  }
-                    // });
-                   
+                   options = {
+                        latitude: data.latitude,
+                        longitude: data.longitude,
+                        markers: [{latitude: data.latitude, longitude: data.longitude}],
+                        zoom: 10,
+                        scrollwheel: false
+                   };                   
+                   $('#map').show();
+                   $('#map').gMap({
+                        latitude: data.latitude,
+                        longitude: data.longitude,
+                        markers: [{latitude: data.latitude, longitude: data.longitude}],
+                        zoom: 16,
+                        scrollwheel: false
+                   });
                    $('#result').show();
                }
            },

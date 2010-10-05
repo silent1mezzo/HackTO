@@ -1,6 +1,6 @@
 /*
-	Where To Eat
-	Main Stylesheet
+    Where To Eat
+    Main Stylesheet
 */
 
 * { margin: 0; padding:0; }
@@ -15,76 +15,76 @@
 }
 
 #header .logo { 
-	padding: 26px 0 0 260px; 
+    padding: 26px 0 0 130px; 
 }
 
 #header .logo a {
     font-family: Code,Helvetica,Arial,sans-serif;
-	font-size: 48px;
-	color: #A8DBA8;
+    font-size: 48px;
+    color: #A8DBA8;
 }
 /* CONTENT */
 input { 
-	border-bottom-left-radius: 4px 4px;
-	border-bottom-right-radius: 4px 4px;
-	border-top-left-radius: 4px 4px;
-	border-top-right-radius: 4px 4px;
-	background: white url(http://localhost:8000/site-media/images/bg-form-field.gif) repeat-x 0% 0%;
-	border: solid #D5D5D5;
-	color: #333;
-	font-size: 13px;
-	padding: 6px;
-	/*height: 30px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; */
+    border-bottom-left-radius: 4px 4px;
+    border-bottom-right-radius: 4px 4px;
+    border-top-left-radius: 4px 4px;
+    border-top-right-radius: 4px 4px;
+    background: white url(http://localhost:8000/site-media/images/bg-form-field.gif) repeat-x 0% 0%;
+    border: solid #D5D5D5;
+    color: #333;
+    font-size: 13px;
+    padding: 6px;
+    /*height: 30px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; */
 }
 
-.search { margin-left: 300px;}
+.search { margin-left: 234px;}
 
 .button {
-	
-	display: inline-block;
-	outline: none;
-	cursor: pointer;
-	text-align: center;
-	text-decoration: none;
-	height: 41px;
-	font: 14px/100% Arial, Helvetica, sans-serif;
-	padding: .5em 2em .55em;
-	text-shadow: 0 1px 1px rgba(0,0,0,.3);
-	-webkit-border-radius: .5em;
-	-moz-border-radius: .5em;
-	border-radius: .5em;
-	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	border: 0px;
+
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    height: 41px;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    border: 0px;
 }
 .button:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
 .button:active {
-	position: relative;
-	
+    position: relative;
+
 }
 
 .blue {
-	color: #d9eef7;
-	border: solid 1px #0B486B;
-	background: #0B486B;
-	background: -webkit-gradient(linear, left top, left bottom, from(#107FC9), to(#0B486B));
-	background: -moz-linear-gradient(top,  #0B486B,  #0B486B);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0B486B', endColorstr='#0B486B');
+    color: #d9eef7;
+    border: solid 1px #0B486B;
+    background: #0B486B;
+    background: -webkit-gradient(linear, left top, left bottom, from(#107FC9), to(#0B486B));
+    background: -moz-linear-gradient(top,  #0B486B,  #0B486B);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0B486B', endColorstr='#0B486B');
 }
 .blue:hover {
-	background: #0B486B;
-	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
-	background: -moz-linear-gradient(top,  #0095cc,  #00678e);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0B486B', endColorstr='#0B486B');
+    background: #0B486B;
+    background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+    background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0B486B', endColorstr='#0B486B');
 }
 .blue:active {
-	color: #0B486B;
-	background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
-	background: -moz-linear-gradient(top,  #0078a5,  #00adee);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0B486B', endColorstr='#0B486B');
+    color: #0B486B;
+    background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+    background: -moz-linear-gradient(top,  #0078a5,  #00adee);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0B486B', endColorstr='#0B486B');
 }
 
 
@@ -97,8 +97,9 @@ input {
     border-bottom-right-radius: 5px 5px;
     border-top-left-radius: 5px 5px;
     border-top-right-radius: 5px 5px;
+    height: 400px;
     padding: 18px;
-    width: 90%;
+    width: 975px;
     display: none;
 }
 
@@ -108,9 +109,9 @@ input {
     height: 250px; 
     width: 250px;
     -webkit-border-radius: .5em;
-	-moz-border-radius: .5em;
-	border-radius: .5em;
-	margin-right: 50px;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    margin-right: 50px;
 }
 
 #result h3 { font-size: 28px; color: #0B486B;} 
@@ -128,7 +129,6 @@ input {
 
 #result .company { float: left; width: 500px; }
 
-#result .map_canvas { float: left; width: 450px; height: 450px;}
 
 .metrics {
     background: #E9E1D4;
@@ -177,7 +177,7 @@ body {
 
 #body-wrapper {
 /*                background: url('../images/bg-radial-gradient.gif') no-repeat;*/
-            	}                
+                }                
 
 /********************************      Elements styling      ********************************/
 
@@ -188,9 +188,9 @@ h1, h2, h3, h4, h5, h6 {
                 }
 
 h1            { font-family: Calibri, Helvetica, Arial, sans-serif; font-size: 31px; font-weight: bold; color: #fff; 
-				  position: absolute; top: -1000px;  /* Remove this line and delete the logo (in the HTML) if you don't want an image as a logo */
-				}
-				
+                  position: absolute; top: -1000px;  /* Remove this line and delete the logo (in the HTML) if you don't want an image as a logo */
+                }
+
 h2            { font-size: 26px; padding: 0 0 10px 0; }
 h3            { font-size: 17px; padding: 0 0 10px 0; }
 h4            { font-size: 16px; padding: 0 0 5px 0; }
@@ -205,7 +205,7 @@ a:focus     { outline: 1px; }
 
 strong       { font-weight: bold; color: #333; }
 
-small   		{ font-size: 0.85em; }
+small           { font-size: 0.85em; }
 
 pre           { font-family: monospace; }
 
@@ -219,30 +219,30 @@ p {
 .clear {
                 clear: both;
                 }
-				
+
 .align-left {
                 float: left;
                 }
-				
+
 .align-right {
                 float: right;
                 }
 
 /************ Button ************/
-			
+
 a.remove-link {
-				color: #bb0000;
-				}
+                color: #bb0000;
+                }
 
 a.remove-link:hover {
-				color: #000;
-				}
+                color: #000;
+                }
 
 
 /************ Layout ************/
 
 #main-content {
-                margin: 0 30px 0 260px;
+                margin: 0 30px 0 130px;
                 padding: 40px 0 0 0;
                 }
 
@@ -261,12 +261,12 @@ a.remove-link:hover {
                 padding: 0 0 20px 0;
                 }
 
-				
+
 #footer {
-				border-top: 1px solid #ccc;
-				margin: 40px 0 0 0;
-				padding: 20px 0;
-				font-size: 12px;
+                border-top: 1px solid #ccc;
+                margin: 40px 0 0 0;
+                padding: 20px 0;
+                font-size: 12px;
                 }
 /************ Lists ************/
 
@@ -311,20 +311,28 @@ form p small {
                 font-size: 0.75em;
                 color: #777;
                 }
-				
-				
+
+
 form .small-input {
                 width: 300px !important;
                 height: 30px;
                 font-size: 18px;
-				margin-right: 10px;
-				border: 1px solid #CCC;
+                margin-right: 10px;
+                border: 1px solid #CCC;
                 }
 form .small-postal {
-				width: 150px !important;
-				height: 30px;
-				font-size: 18px;
-				margin-right: 10px;
-				border: 1px solid #CCC;
+                width: 150px !important;
+                height: 30px;
+                font-size: 18px;
+                margin-right: 10px;
+                border: 1px solid #CCC;
 }
-                
+#map {  
+  position: absolute;
+  top: 220px;
+  left: 625px;
+  height: 400px;
+  width: 500px;
+  display: none;
+}
+
