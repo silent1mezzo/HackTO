@@ -1,10 +1,10 @@
 $(document).ready(function() {
     $('#id_search_button').click(function(e){
-        $('#map').hide();
+        $('#id_search_button').attr('disabled', 'disabled');
         e.preventDefault();
         var text = $('#id_q').val();
         var postal_code = $('#id_postal_code').val();
-        $('#result').hide();
+        $('#results').hide();
         $('#error').hide();
         $('#loading').show();
         $.ajax({
@@ -37,20 +37,23 @@ $(document).ready(function() {
                         zoom: 10,
                         scrollwheel: false
                    };                   
-                   $('#map').show();
-                   $('#map').gMap({
-                        latitude: data.latitude,
-                        longitude: data.longitude,
-                        markers: [{latitude: data.latitude, longitude: data.longitude}],
-                        zoom: 16,
-                        scrollwheel: false
-                   });
-                   $('#result').show();
+                   // $('#map').show();
+                   // $('#map').gMap({
+                   //      latitude: data.latitude,
+                   //      longitude: data.longitude,
+                   //      markers: [{latitude: data.latitude, longitude: data.longitude}],
+                   //      zoom: 16,
+                   //      scrollwheel: false
+                   // });
+                   $('#results').show();
                }
            },
            error: function(XMLHttpRequest, textStatus, errorThrown) {
                alert("Um... crap. This wasn't supposed to happen.");
-           } 
+           },
+           complete: function() {
+               $('#id_search_button').removeAttr('disabled');
+           }
          });
     });
     

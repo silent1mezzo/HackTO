@@ -75,22 +75,37 @@ input {
     outline: none;
     cursor: pointer;
     text-align: center;
-    -webkit-border-radius: .5em;
-    -moz-border-radius: .5em;
-    border-radius: .5em;
+    -webkit-border-radius: .2em;
+    -moz-border-radius: .2em;
+    border-radius: .2em;
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
     box-shadow: 0 1px 2px rgba(0,0,0,.2);
     border: 0px;
-    background: #2C4F93;
     color: #FFF;
+    text-shadow: rgba(0, 0, 0, 0.5) 0.1em 0.1em 0.2em;
+    background: #7C98CB;
+    background: -webkit-gradient(linear, 0 50%, 0 100%, from(#7C98CB), to(#2C4F93)); 
+    background: -moz-linear-gradient(top, #7C98CB, #7C98CB, #2C4F93);
 }
+
 .button:hover {
-    background: #4579DF;
+    background: #2C4F93;
+    background: -webkit-gradient(linear, 0 50%, 0 100%, from(#7C98CB), to(#2C4F93)); 
+    background: -moz-linear-gradient(top, #7C98CB, #7C98CB, #2C4F93);
+    -moz-box-shadow:    2px 2px 6px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    box-shadow:         2px 2px 6px rgba(0, 0, 0, 0.5);    
+    text-shadow: rgba(0, 0, 0, 0.5) 0.2em 0.2em 0.4em;
 }
+
 .button:active {
-/*    position: relative;*/
-    background: #C3CDDF;
+    background: #7C98CB;
+    background: -webkit-gradient(linear, 0 50%, 0 100%, from(#2C4F93), to(#7C98CB)); 
+    background: -moz-linear-gradient(top, #2C4F93, #2C4F93, #7C98CB);
+    -moz-box-shadow:    1px 1px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow:         1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .result {
@@ -99,7 +114,7 @@ input {
     border-radius: .3em;
     background: #EFEFEF;
     margin-bottom: 10px;
-    padding: 0.6em 0.6em 3em 0.6em;
+    padding: 0.8em 0.6em 3em 0.6em;
     overflow:visible;
     white-space: nowrap;   
 }
@@ -122,9 +137,14 @@ input {
     padding: 5px;
     text-align:center;
     position:relative;
-    top: -25px;
+    top: -35px;
 }
 
 .address {
     clear: both;
+    float: left;
+}
+
+.map {
+    float: right;
 }

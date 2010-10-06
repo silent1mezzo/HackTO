@@ -33,9 +33,9 @@
 	        <div id='loading' style='display:none'>
 			    <img src='{{ MEDIA_URL }}/images/spinner.gif'>
 			</div>
-			<div id='results'>
-			    <ul class='result'>
-			        <span class='score'>1.234</span>
+			<div id='results' style='display:none'>
+			    <ul class='result clearfix'>
+			        <span class='score' id='id_rank'>1.234</span>
 			        <h3 class='company_name' id='id_company_name'>Company Name</h3>
 			        <ul class='address'>
 						<li id='id_street_address'>123 This Rd</li>
@@ -44,6 +44,9 @@
 						    <span id='id_prov'>Ontario</span>
 						</li>
 					</ul>
+					<div id='id_dmap' class='map'>
+					    THis is where teh map will go.
+					</div>
 			    </fieldset>
 			</div>
 	    </div>
