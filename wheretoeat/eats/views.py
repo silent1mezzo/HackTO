@@ -14,19 +14,7 @@ def index(request):
         'form' : QueryForm(),
     }
     return render_to_response(template_name, context, context_instance=RequestContext(request))
-
-
-def search(request):
-    template_name = 'result.html'
-    context = {}
-    if request.POST:
-        search = request.POST.get('search', '')
-        postal_code = request.POST.get('postal_code', '')
-    else:
-        return HttpResponseRedirect(reverse('index'))
     
-    return render_to_response(template_name, context, context_instance=RequestContext(request))
-
 
 def search_json(request):
     q = request.POST.get('q')

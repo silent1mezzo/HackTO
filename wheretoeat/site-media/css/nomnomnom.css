@@ -1,0 +1,94 @@
+@font-face{
+    font-family: 'Chalet ParisNineteenSixty';
+    src: url('/site-media/fonts/Chalet-ParisNineteenSixty.otf') format('opentype');
+}
+@font-face{
+    font-family: 'Chalet LondonNineteenSixty';
+    src: url('/site-media/fonts/Chalet-LondonNineteenSixty.otf') format('opentype');
+}   
+
+html {
+    font-weight:normal;
+    font-family: 'Chalet LondonNineteenSixty';
+}
+
+body {
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color:#2C4F93;
+}
+
+a:visited {
+    color:#2C4F93;
+}
+
+a:hover {
+    color:#3B475F;
+}
+
+#container {
+    width: 660px;
+    margin: auto;
+}
+
+#header {
+    font-size: 3em;
+    font-family: 'Chalet ParisNineteenSixty';
+    text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#search-form-box {
+    padding-bottom: 30px;
+}
+
+#loading {
+    text-align: center;
+}
+
+input {
+    font-size:1em;
+    padding: 0.2em 5px 0.2em 0.2em;
+}
+
+#id_q {
+    width: 420px;
+}
+
+#id_postal_code {
+    width: 100px;
+}
+
+#id_search_button {
+    width: 100px;
+}
+
+
+.button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    border: 0px;
+    background: #2C4F93;
+    color: #FFF;
+}
+.button:hover {
+    background: #4579DF;
+}
+.button:active {
+/*    position: relative;*/
+    background: #C3CDDF;
+}

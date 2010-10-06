@@ -1,23 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
- 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml"> 
- 
-	<head> 
-		
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
-		
-		<title>{% block title %}Where To Eat Near You:: Nom Nom Nom Rank{% endblock %}</title> 
-	
-		<link rel="stylesheet" href="{{MEDIA_URL}}css/reset.css" type="text/css" media="screen" />
-	  
-		<link rel="stylesheet" href="{{MEDIA_URL}}css/style.css" type="text/css" media="screen" /> 
-	
-		<link rel="stylesheet" href="{{MEDIA_URL}}css/invalid.css" type="text/css" media="screen" />
+    <head> 
+		<title>{% block title %}NomNomNom Rank - Find somewhere good to eat near you!{% endblock %}</title>
+		{% block css %}
+		<link rel="stylesheet" href="{{MEDIA_URL}}css/reset.css" type="text/css" media="screen" />  
+		<link rel="stylesheet" href="{{MEDIA_URL}}css/nomnomnom.css" type="text/css" media="screen" /> 	
+		{% endblock css %}
 		
 		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.js"></script> 
-		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAVjNv9nnj6F_E2Mdsu4auQBRvAmg9-wCdwQ3HThb0eBO0NxMtrRQc7a0JdGP4remzOUwoFRx_D1meLg" type="text/javascript"></script>
-        <script type="text/javascript" src="{{MEDIA_URL}}js/jquery.gmap.js"></script>
 		<script type="text/javascript" src="{{MEDIA_URL}}js/query_tool.js"></script>
 		<script type='text/javascript'>
 		    var SEARCH_JSON = "{% url search_json %}";
@@ -26,6 +16,27 @@
 	</head> 
   
 	<body>
+	    <div id='container'>
+	        <h1 id='header'><a href='{% url index %}'>NomNomNom Rank</a></h1>
+	        <div id='search-form-box'>
+	            <form action="" method="post" class='search'> 	
+					<p>
+					    {{ form.q }}
+					    {{ form.postal_code }}	
+						<input type="submit" class="medium button blue" value="Go" id="id_search_button"/>
+					</p> 
+				</form>
+	        </div>
+	        <div id='loading' style='display:none'>
+			    <img src='{{ MEDIA_URL }}/images/spinner.gif'>
+			</div>
+	    </div>
+	</body> 
+</html>
+	    
+	    
+	    
+	    {% comment %}
 		<div id="body-wrapper"> <!-- Wrapper for the radial gradient background --> 
 			<div id='header'>
 				<div class='logo'>
@@ -95,6 +106,5 @@
 		</div> <!-- End #main-content --> 
 		
 	</div>
-<div id='map'></div>
-</body> 
-</html>
+    <div id='map'></div>
+    {% endcomment %}
