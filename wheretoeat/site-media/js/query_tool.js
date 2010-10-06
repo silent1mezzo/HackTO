@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
     $('#id_search_button').click(function(e){
         $('#id_search_button').attr('disabled', 'disabled');
         e.preventDefault();
@@ -29,22 +30,18 @@ $(document).ready(function() {
                    $('#id_distance').text(data.distance);
                    $('#id_weather').text(data.weather_desc);
                    $('#weather_icon').attr("src", data.weather_icon);
+                
+                   var location = new google.maps.LatLng(data.latitude, data.longitude);
+                   var map = new google.maps.Map(document.getElementById('id_map'), {
+                       zoom: 14,
+                       center: location,
+                       mapTypeId: google.maps.MapTypeId.ROADMAP
+                   });
+                   var marker = new google.maps.Marker({
+                       position: location,
+                       map: map
+                   });
                    
-                   options = {
-                        latitude: data.latitude,
-                        longitude: data.longitude,
-                        markers: [{latitude: data.latitude, longitude: data.longitude}],
-                        zoom: 10,
-                        scrollwheel: false
-                   };                   
-                   // $('#map').show();
-                   // $('#map').gMap({
-                   //      latitude: data.latitude,
-                   //      longitude: data.longitude,
-                   //      markers: [{latitude: data.latitude, longitude: data.longitude}],
-                   //      zoom: 16,
-                   //      scrollwheel: false
-                   // });
                    $('#results').show();
                }
            },

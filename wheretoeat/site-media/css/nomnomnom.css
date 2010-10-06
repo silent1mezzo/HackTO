@@ -147,4 +147,8 @@ input {
 
 .map {
     float: right;
+    width: 250px; 
+    height: 250px;
+    border: 2px groove #9B999A;
+    display: block;
 }
