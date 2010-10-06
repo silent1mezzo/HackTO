@@ -45,7 +45,7 @@ a:hover {
 }
 
 #search-form-box {
-    padding-bottom: 30px;
+    padding-bottom: 75px;
 }
 
 #loading {
@@ -91,4 +91,40 @@ input {
 .button:active {
 /*    position: relative;*/
     background: #C3CDDF;
+}
+
+.result {
+    -webkit-border-radius: .3em;
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+    background: #EFEFEF;
+    margin-bottom: 10px;
+    padding: 0.6em 0.6em 3em 0.6em;
+    overflow:visible;
+    white-space: nowrap;   
+}
+
+.result h3 {
+    float: left;
+    font-size: 2em;
+}
+
+.result .score {
+    top: -10px;
+    float: right;
+    font-size: 1.6em;
+    -webkit-border-radius: .3em;
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+    background:none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #9B999A;
+    color: #555E63;
+    padding: 5px;
+    text-align:center;
+    position:relative;
+    top: -25px;
+}
+
+.address {
+    clear: both;
 }

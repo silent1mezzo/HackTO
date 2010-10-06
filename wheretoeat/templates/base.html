@@ -4,15 +4,18 @@
 		<title>{% block title %}NomNomNom Rank - Find somewhere good to eat near you!{% endblock %}</title>
 		{% block css %}
 		<link rel="stylesheet" href="{{MEDIA_URL}}css/reset.css" type="text/css" media="screen" />  
+		<link rel="stylesheet" href="{{MEDIA_URL}}css/clearfix.css" type="text/css" media="screen" /> 	
 		<link rel="stylesheet" href="{{MEDIA_URL}}css/nomnomnom.css" type="text/css" media="screen" /> 	
 		{% endblock css %}
 		
+		{% block javascript %}
 		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.js"></script> 
 		<script type="text/javascript" src="{{MEDIA_URL}}js/query_tool.js"></script>
+		{% endblock javascript %}
+		
 		<script type='text/javascript'>
 		    var SEARCH_JSON = "{% url search_json %}";
 		</script>
-		{% block includes %}{% endblock %}
 	</head> 
   
 	<body>
@@ -29,6 +32,19 @@
 	        </div>
 	        <div id='loading' style='display:none'>
 			    <img src='{{ MEDIA_URL }}/images/spinner.gif'>
+			</div>
+			<div id='results'>
+			    <ul class='result'>
+			        <span class='score'>1.234</span>
+			        <h3 class='company_name' id='id_company_name'>Company Name</h3>
+			        <ul class='address'>
+						<li id='id_street_address'>123 This Rd</li>
+						<li>
+						    <span id='id_city'>Toronto</span>
+						    <span id='id_prov'>Ontario</span>
+						</li>
+					</ul>
+			    </fieldset>
 			</div>
 	    </div>
 	</body> 
