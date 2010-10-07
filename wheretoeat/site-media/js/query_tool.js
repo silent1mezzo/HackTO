@@ -9,19 +9,18 @@ $(document).ready(function() {
         $('#error').hide();
         $('#loading').show();
         $.ajax({
-           type: "POST",
-           url: SEARCH_JSON,
-           dataType: "json",
-           data: {
-               'q' : text,
-               'postal_code' : postal_code
+            type: "POST",
+            url: SEARCH_JSON,
+            dataType: "json",
+            data: {
+                'q' : text,
+                'postal_code' : postal_code
            },
            success: function(data, textStatus, XMLHttpRequest){
                $('#loading').hide();
                if (data.status == 'EMPTY') {
                    $('#error').show();
-               }
-               else {
+               } else {
                    $('#id_company_name').text(data.name);
                    $('#id_street_address').text(data.street_address);
                    $('#id_prov').text(data.province);
@@ -30,19 +29,20 @@ $(document).ready(function() {
                    $('#id_distance').text(data.distance);
                    $('#id_weather').text(data.weather_desc);
                    $('#weather_icon').attr("src", data.weather_icon);
-                
-                   var location = new google.maps.LatLng(data.latitude, data.longitude);
-                   var map = new google.maps.Map(document.getElementById('id_map'), {
-                       zoom: 14,
-                       center: location,
-                       mapTypeId: google.maps.MapTypeId.ROADMAP
+
+                   $('#results').show('drop', {}, 100, function(){
+                       var location = new google.maps.LatLng(data.latitude, data.longitude); 
+                       var map = new google.maps.Map(document.getElementById('id_map'), {
+                           zoom: 14,
+                           center: location,
+                           mapTypeId: google.maps.MapTypeId.ROADMAP
+                       });                       
+                       var marker = new google.maps.Marker({
+                           position: location,
+                           map: map
+                       });
+                       map.panTo(location);
                    });
-                   var marker = new google.maps.Marker({
-                       position: location,
-                       map: map
-                   });
-                   
-                   $('#results').show();
                }
            },
            error: function(XMLHttpRequest, textStatus, errorThrown) {

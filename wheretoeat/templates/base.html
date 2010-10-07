@@ -10,8 +10,9 @@
 		
 		{% block javascript %}
 		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.js"></script> 
+		<script type="text/javascript" src="{{MEDIA_URL}}js/jquery-ui-1.8.5.custom.min.js"></script> 
 		<script type="text/javascript" src="{{MEDIA_URL}}js/query_tool.js"></script>
-		<script type="text/javascript"src="http://maps.google.com/maps/api/js?v=3.1&sensor=false"></script>
+		<script type="text/javascript"src="http://maps.google.com/maps/api/js?v=3.1&sensor=false"></script>	
 		{% endblock javascript %}
 		
 		<script type='text/javascript'>
@@ -35,6 +36,9 @@
 	        <div id='loading' style='display:none'>
 			    <img src='{{ MEDIA_URL }}/images/spinner.gif'>
 			</div>
+			<div id='error' style='display:none'>
+                <p>No results found - your area sucks for good food.</p>
+			</div>
 			<div id='results' style='display:none'>
 			    <ul class='result clearfix'>
 			        <span class='score' id='id_rank'>1.234</span>
@@ -46,7 +50,7 @@
 						    <span id='id_prov'>Ontario</span>
 						</li>
 					</ul>
-					<div id='id_map' class='map'></div>
+					<div id='id_map' class='map' style='width:250px;height:250px;'></div>
 			    </fieldset>
 			</div>
 	    </div>
