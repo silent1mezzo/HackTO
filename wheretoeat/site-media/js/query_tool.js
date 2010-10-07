@@ -1,5 +1,30 @@
 $(document).ready(function() {
     
+    $(document).bind('generate_map', function(event, latitude, longitude) {
+        var location = new google.maps.LatLng(latitude, longitude); 
+        var map = new google.maps.Map(document.getElementById('id_map'), {
+            zoom: 14,
+            center: location,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });                       
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+        map.panTo(location);
+    });
+    
+    $(document).bind('load_result_data', function(event, data) {
+        $('#id_company_name').text(data.name);
+        $('#id_street_address').text(data.street_address);
+        $('#id_prov').text(data.province);
+        $('#id_city').text(data.city);
+        $('#id_rank').text(data.relavence_rank);
+        $('#id_distance').text(data.distance);
+        $('#id_weather').text(data.weather_desc);
+        $('#weather_icon').attr("src", data.weather_icon);
+    });
+    
     $('#id_search_button').click(function(e){
         $('#id_search_button').attr('disabled', 'disabled');
         e.preventDefault();
@@ -21,27 +46,9 @@ $(document).ready(function() {
                if (data.status == 'EMPTY') {
                    $('#error').show();
                } else {
-                   $('#id_company_name').text(data.name);
-                   $('#id_street_address').text(data.street_address);
-                   $('#id_prov').text(data.province);
-                   $('#id_city').text(data.city);
-                   $('#id_rank').text(data.relavence_rank);
-                   $('#id_distance').text(data.distance);
-                   $('#id_weather').text(data.weather_desc);
-                   $('#weather_icon').attr("src", data.weather_icon);
-
+                   $(document).trigger('load_result_data', [data]);
                    $('#results').show('drop', {}, 100, function(){
-                       var location = new google.maps.LatLng(data.latitude, data.longitude); 
-                       var map = new google.maps.Map(document.getElementById('id_map'), {
-                           zoom: 14,
-                           center: location,
-                           mapTypeId: google.maps.MapTypeId.ROADMAP
-                       });                       
-                       var marker = new google.maps.Marker({
-                           position: location,
-                           map: map
-                       });
-                       map.panTo(location);
+                       $(document).trigger('generate_map', [data.latitude, data.longitude]);
                    });
                }
            },
