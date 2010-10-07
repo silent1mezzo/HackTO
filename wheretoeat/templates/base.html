@@ -41,15 +41,37 @@
 			</div>
 			<div id='results' style='display:none'>
 			    <ul class='result clearfix'>
-			        <span class='score' id='id_rank'>1.234</span>
-			        <h3 class='company_name' id='id_company_name'>Company Name</h3>
+			        <span class='score' id='id_rank'></span>
+			        <h3 class='company_name' id='id_company_name'></h3>
 			        <ul class='address'>
-						<li id='id_street_address'>123 This Rd</li>
+						<li id='id_street_address'></li>
 						<li>
-						    <span id='id_city'>Toronto</span>
-						    <span id='id_prov'>Ontario</span>
+						    <span id='id_city'></span>
+						    <span id='id_prov'></span>
 						</li>
 					</ul>
+					<div id='id_metrics' class='metrics'>
+					    <h4>Why did we choose this restaraunt?</h4>
+					    <ul>
+					        <li>
+                                <img id='weather_icon' src='' /><span>Weather:</span>
+                                <span id='id_weather'></span>
+					        </li>
+					        <li>
+                                <img src='{{MEDIA_URL}}images/footsteps.jpg' />
+                                <span>Distance:</span>
+                                <span id='id_distance'></span>
+					        </li>
+					        <li>
+					            <img src='{{MEDIA_URL}}images/foursquare.jpg' />
+					            <span>Fourquare Popularity</span> 
+					        </li>
+					        <li>
+					            <img src='{{MEDIA_URL}}images/foursquare.jpg' />
+					            <span>Fourquare Saturation</span>
+					        </li>
+					    </ul>
+					</div>
 					<div id='id_map' class='map' style='width:250px;height:250px;'></div>
 			    </ul>
 			</div>
